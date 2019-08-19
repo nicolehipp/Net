@@ -49,12 +49,10 @@ void renderDots() {
     fill(127, 100);
     ellipse(dots[i].x, dots[i].y, 33, 33);
   }
-
+  
   for (int i = 0; i < nDots; i++) {
     for (int j = i + 1; j < nDots; j++) {
-      if (dots[i].dist(dots[j]) < 100) {
-        line(dots[i].x, dots[i].y, dots[j].x, dots[j].y);
-      }
+      line(dots[i].x, dots[i].y, dots[j].x, dots[j].y);
     }
   }
 }
