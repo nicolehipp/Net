@@ -14,7 +14,10 @@ void setup () {
 }
 
 void draw () {
-  background(255);
+  noStroke();
+  fill(255, 170);
+  rect(0, 0, width, height);
+  background(0);
 
   updateDots();
   renderDots();
@@ -46,13 +49,17 @@ void renderDots() {
     fill(0);
     ellipse(dots[i].x, dots[i].y, 6, 6);
 
-    fill(127, 100);
+    fill(45, 99, 144);
     ellipse(dots[i].x, dots[i].y, 33, 33);
   }
-  
+  stroke(111, 189, 255);
   for (int i = 0; i < nDots; i++) {
     for (int j = i + 1; j < nDots; j++) {
-      line(dots[i].x, dots[i].y, dots[j].x, dots[j].y);
+      
+      float d = dist(dots[i].x, dots[i].y, dots[j].x, dots[j].y);
+      if(d<=100){
+        line(dots[i].x, dots[i].y, dots[j].x, dots[j].y);
+      }
     }
   }
 }
